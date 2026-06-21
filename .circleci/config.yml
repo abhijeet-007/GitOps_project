@@ -25,7 +25,8 @@ jobs:
       - run:
           name: Updating Manifest file 
           command: |
-            TAG="build-$CIRCLE_BUILD_NUM"
+            TAG=$CIRCLE_BUILD_NUM
+            ((TAG--))
             git clone https://github.com/abhijeet-007/GitOps-project-kube-manifest.git
             git config --global user.email "abhijeetmodak642@gmail.com"
             git config --global user.name "abhijeet-007"
